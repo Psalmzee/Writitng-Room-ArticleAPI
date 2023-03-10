@@ -42,7 +42,7 @@ const matchPassword = async (email, password) => {
   const user = await getUserByEmail(email);
   const passwords = await bcrypt.compare(password, user.password);
   if (!password) {
-    throw new AppError(httpStatus.NOT_FOUND, 'Password Salah');
+    throw new AppError(httpStatus.NOT_FOUND, 'Password Invalid');
   }
   return passwords;
 };
@@ -84,7 +84,7 @@ const logout = async (refreshToken) => {
     },
   });
   if (!refToken) {
-    throw new AppError(httpStatus.NOT_FOUND, 'Tidak ditemukan');
+    throw new AppError(httpStatus.NOT_FOUND, 'Not found!');
   }
 
   await tokens.destroy({

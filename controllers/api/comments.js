@@ -9,7 +9,7 @@ const addComment = catchError(async (req, res) => {
     const { postId } = req.body;
     const posts = await postService.getPostsById(postId);
     if (!posts) {
-      throw new AppError(httpStatus.NOT_FOUND, 'id tidak ditemukan');
+      throw new AppError(httpStatus.NOT_FOUND, 'Invalid!');
     }
     const comments = await commentService.addComment(user, req.body);
     res.status(httpStatus.CREATED).json({
