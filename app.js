@@ -27,10 +27,6 @@ if (env !== 'test') {
   app.use(morgan.errorHandler);
 }
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
 // enable cors
 app.use(cors());
 app.options('*', cors());
@@ -38,7 +34,6 @@ app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
 
 // jwt | passport
 app.use(passport.initialize());
@@ -50,13 +45,6 @@ if (env === 'production') {
 }
 
 app.use('/api/v1', apiRouter);
-
-// app.use(function (req, res, next) {
-//   if (req.originalUrl && req.originalUrl.split('/').pop() === 'favicon.ico') {
-//     return res.status(204).send();
-//   }
-//   return next();
-// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
