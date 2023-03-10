@@ -1,0 +1,20 @@
+{
+  "name": "writitng-room-articleapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Psalmzee/Writitng-Room-ArticleAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Psalmzee/Writitng-Room-ArticleAPI/issues"
+  },
+  "homepage": "https://github.com/Psalmzee/Writitng-Room-ArticleAPI#readme"
+}
